@@ -1,17 +1,54 @@
-Tutorial NodeJS, Express, Atom, GitHub, Cloud9 y Markdown
-======================================================
+# Tutorial de NodeJS y Markdown
 
-## Instalación de NodeJS en Windows
-
+## ¿Qué es NodeJS?
 Es un intérprete **Javascript** del lado del servidor que cambia la noción de cómo debería trabajar un servidor. Su meta es permitir a un programador construir aplicaciones altamente escalables y escribir código que maneje decenas de miles de conexiones simultáneas en una sólo una máquina física.
 
-Para empezar a utilizarlo descargar el paquete de instalación para la plataforma windows y seguir los pasos del asistente de instalación de **NodeJS**.
+## Instalación de NodeJS en linux
+Para llevar a cabo la instalación de *NodeJS* en linux se puede proceder de diversas maneras; se puede optar por instalarlo via gestionardor de paquetes
+de la distro que se usa puede no estar(En mi caso uso Antergos, una variante de [Archlinux](https://www.archlinux.org/)) o por medio del binario que se puede descargar en la [página oficial](https://nodejs.org/en/).
 
+Yo he optado por usar el gestionador de paquetes.
+```bash
+sudo pacman -Syu nodejs
+```
+
+## Uso de NodeJS
+
+Para iniciar el REPL(Read-Eval-Print-Loop) de Javascript incorporado en NodeJS, ejecutamos node en un terminal del sistema. Con ello ya podemos interpretar
+código Javascript directamente. Como se muestra:
 ![](images/node.png)
 
-Abrimos la consola de **NodeJS** y comprobamos que se ha instalado correctamente, aparecerá el siguiente mensaje que indica que se ha instalado.
+Para complementar el lenguaje están las [librerias ya existentes](https://www.npmjs.com), estas pueden ser obtenidas con el comando `npm` el cual viene con el paquete de NodeJS ya instalado.
 
-Instalamos el framework **Express** con la consola de **NodeJS** y el siguiente comando:
+Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando `sudo`. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar en esta [dirección](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
+
+- Crear un directorio para los paquetes a instalar globalmente
+> `mkdir "${HOME}/.npm-packages"`
+
+- Indicar a `npm` en su archivo de configuración `~/.npmrc` donde se localiza el directorio a guardar los paquetes globales. Añadiendo la siguiente línea
+> `prefix=${HOME}/.npm-packages`
+
+- Debemos modificar nuestro archivo de configuración de la shell que se usa, en mi caso uso `ZSH`. Con lo cual es `~/.zshrc` pero si fuese bash seria `~/.bashrc`
+```bash
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+```
+- Por último para cargar los cambios podemos ejecutar `source ~/.bashrc` en el caso de tener bash como shell. Los cambios se van a cargar cada vez que se inicie
+la shell correspondiente.
+
+Como recomendación les propongo instalar [grunt](https://www.npmjs.com/package/grunt-cli) y [express](http://expressjs.com/).
+
+- Grunt: Permite automatizar tareas
+> `npm install -g grunt-cli`
+
+- Express: TODO:
+> `npm install -g express`
+
 
 **Comando**
 
@@ -93,6 +130,10 @@ Listas
 
 * [NodeJS](https://nodejs.org)
 * [Express](http://expressjs.com)
+* [NodeJs sudo info](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo)
+* [NodeJs sudo info 2](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
+
+
 * [Atom IDE](https://atom.io)
 * [GitHub Desktop](https://desktop.github.com)
 * [GitHub Pages](https://pages.github.com/)
