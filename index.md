@@ -23,13 +23,16 @@ Para complementar el lenguaje están las [librerias ya existentes](https://www.n
 Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando `sudo`. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar en esta [dirección](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 
 - Crear un directorio para los paquetes a instalar globalmente
+
 > `mkdir "${HOME}/.npm-packages"`
 
 - Indicar a `npm` en su archivo de configuración `~/.npmrc` donde se localiza el directorio a guardar los paquetes globales. Añadiendo la siguiente línea
+
 > `prefix=${HOME}/.npm-packages`
 
 - Debemos modificar nuestro archivo de configuración de la shell que se usa, en mi caso uso `ZSH`. Con lo cual es `~/.zshrc` pero si fuese bash seria `~/.bashrc`
-```bash
+
+~~~~~bash
 NPM_PACKAGES="${HOME}/.npm-packages"
 
 PATH="$NPM_PACKAGES/bin:$PATH"
@@ -37,16 +40,19 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-```
+~~~~~
+
 - Por último para cargar los cambios podemos ejecutar `source ~/.bashrc` en el caso de tener bash como shell. Los cambios se van a cargar cada vez que se inicie
 la shell correspondiente.
 
 Como recomendación les propongo instalar [grunt](https://www.npmjs.com/package/grunt-cli) y [express](http://expressjs.com/).
 
 - Grunt: Permite automatizar tareas
+
 > `npm install -g grunt-cli`
 
 - Express: TODO:
+
 > `npm install -g express`
 
 
@@ -132,8 +138,6 @@ Listas
 * [Express](http://expressjs.com)
 * [NodeJs sudo info](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo)
 * [NodeJs sudo info 2](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
-
-
 * [Atom IDE](https://atom.io)
 * [GitHub Desktop](https://desktop.github.com)
 * [GitHub Pages](https://pages.github.com/)
