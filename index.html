@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -43,13 +43,13 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="default.css">
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="template.css" />
 </head>
 <body>
-<section id="tutorial-de-nodejs-y-markdown" class="level1">
+    <div class="container">
+    <div class="row">
+            <div class="span12">
+            <section id="tutorial-de-nodejs-y-markdown" class="level1">
 <h1>Tutorial de NodeJS y Markdown</h1>
 <section id="qué-es-nodejs" class="level2">
 <h2>¿Qué es NodeJS?</h2>
@@ -63,9 +63,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="uso-de-nodejs" class="level2">
 <h2>Uso de NodeJS</h2>
-<p>Para iniciar el REPL(Read-Eval-Print-Loop) de Javascript incorporado en NodeJS, ejecutamos node en un terminal del sistema. Con ello ya podemos interpretar código Javascript directamente. Como se muestra: <img src="images/node.png" /></p>
-<p>Para complementar el lenguaje están las <a href="https://www.npmjs.com">librerias ya existentes</a>, estas pueden ser obtenidas con el comando <code>npm</code> el cual viene con el paquete de NodeJS ya instalado.</p>
-<p>Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando <code>sudo</code>. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar en esta <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">dirección</a></p>
+<p>Para iniciar el REPL(Read-Eval-Print-Loop) de Javascript incorporado en NodeJS, ejecutamos node en un terminal del sistema. Con ello ya podemos interpretar código Javascript directamente. Como se muestra:</p>
+<figure>
+<img src="images/node.png" />
+</figure>
+<p>Para complementar el lenguaje están las <a href="https://www.npmjs.com">librerias ya existentes</a>, estas pueden ser obtenidas con el comando <code>npm</code> el cual viene con el paquete de NodeJS ya preinstalado.</p>
+<p>Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando <code>sudo</code>. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar más información en esta <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">dirección</a></p>
 <ul>
 <li>Crear un directorio para los paquetes a instalar globalmente</li>
 </ul>
@@ -99,25 +102,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><code>npm install -g grunt-cli</code></p>
 </blockquote>
 <ul>
-<li>Express: TODO:</li>
+<li>Express: Es un framework web popular de javascript:</li>
 </ul>
 <blockquote>
 <p><code>npm install -g express</code></p>
 </blockquote>
-<p><strong>Comando</strong></p>
+</section>
+<section id="desarrollando-en-nodejs" class="level2">
+<h2>Desarrollando en NodeJs</h2>
+<p>Para poder desarrollar de manera agradable se usan las siguientes funcionalidades incluidas en el paquete instalado</p>
+<p>Lo primero es crear un paquete ejecutamos <code>npm init</code> esto nos permite establecer las dependencias nombre del paquete y otras diversas opciones que se quedan grabadas en el fichero package.json en el mismo directorio que se ejecutó el comando.</p>
+<p>Para añadir dependencias al proyecto se puede hacer directamente con un comando</p>
 <blockquote>
-<p><code>npm install express --save</code></p>
+<p><code>npm install package-name --save-dev</code></p>
 </blockquote>
-<figure>
-<img src="images/node2.png" />
-</figure>
 </section>
 <section id="instalación-del-editor-de-texto-atom" class="level2">
 <h2>Instalación del editor de texto Atom</h2>
-<p>Usaremos <strong>Atom</strong> como editor de texto para el desarrollo de nuestros proyectos, para ello descargamos el instalador en la página oficial de atom, y a continuación ejecutamos el asistente de instalación.</p>
-<figure>
-<img src="images/atom1.png" />
-</figure>
+<p>Como editor se puede eligir Atom, este biene con muchas funcionalidades y capacidad de instalar plugins. Pero si se prefiere algún clásico como Emacs o Vim. En mi caso es emacs con <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> principalmente para generar apuntes en formato <em>org</em>. <img src="images/atom1.png" /></p>
 <p>Dado que vamos a utilizar el formato <strong>Markdown</strong> es bueno saber que en <strong>Atom</strong> podremos obtener una preview del contenido de nuestro fichero Markdown ya que incorpora el formato <strong>GitHub Markdown</strong> con el comando:</p>
 <p><strong>Comando</strong></p>
 <blockquote>
@@ -126,26 +128,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Markdown export to HTML <code>Save As HTML</code></li>
 </ul>
 </blockquote>
-</section>
-<section id="instalación-de-github-desktop" class="level2">
-<h2>Instalación de GitHub Desktop</h2>
-<p>GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones <strong>Git</strong>. Para instalarlo accedemos a la página oficial de <strong>GitHub</strong> y descargamos el instalador que ejecutaremos posteriormente para iniciar el asistente de instalación.</p>
-<figure>
-<img src="images/git.png" />
-</figure>
-<p>Una vez instalado configuramos nuestra cuenta de <strong>GitHub</strong> en la aplicación para poder sincronizar nuestro repositorio tanto local como remoto, en caso de no tener cuenta crearemos una en la página de <strong>GitHub</strong>.</p>
-</section>
-<section id="cloud-9" class="level2">
-<h2>Cloud 9</h2>
-<p>Es un IDE de desarrollo online, para su uso será necesario crear una cuenta en la página oficial o acceder con las credenciales de GitHub si ya se dispone de una cuenta. Una vez registrados podremos crear proyectos de varias tecnologías como puede ser NodeJS, HTML5, C++, Ruby On Rails, etc.</p>
-<figure>
-<img src="images/cloud.png" />
-</figure>
-<p>Si disponemos de algún proyecto en un repositorio de GitHub podremos asociarlo a <strong>Cloud9</strong> para trabajar en él tan solo creando un “<code>nuevo workspace</code>” y añadiendo la url <em>git</em> del correspondiente repositorio.</p>
-<figure>
-<img src="images/cloud2.png" />
-</figure>
-<p>Además <strong>Cloud9</strong> permite el trabajo en equipo en el IDE añadiendo miembros a tu workspace.</p>
+<p>También se puede configurar grunt para automatizar el proceso y darle una mayor personalización al formato de salida un ejemplo de configuración es este <a href="https://github.com/EleDiaz/tareas-iniciales-EleDiaz">repo</a>.</p>
 </section>
 <section id="markdown" class="level2">
 <h2>Markdown</h2>
@@ -185,5 +168,8 @@ Parrafo separar por lineas en blanco
 </ul>
 </section>
 </section>
+            </div>
+    </div>
+  </div>
 </body>
 </html>
