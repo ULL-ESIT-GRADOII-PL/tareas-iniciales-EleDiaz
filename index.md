@@ -16,11 +16,12 @@ sudo pacman -Syu nodejs
 
 Para iniciar el REPL(Read-Eval-Print-Loop) de Javascript incorporado en NodeJS, ejecutamos node en un terminal del sistema. Con ello ya podemos interpretar
 código Javascript directamente. Como se muestra:
+
 ![](images/node.png)
 
-Para complementar el lenguaje están las [librerias ya existentes](https://www.npmjs.com), estas pueden ser obtenidas con el comando `npm` el cual viene con el paquete de NodeJS ya instalado.
+Para complementar el lenguaje están las [librerias ya existentes](https://www.npmjs.com), estas pueden ser obtenidas con el comando `npm` el cual viene con el paquete de NodeJS ya preinstalado.
 
-Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando `sudo`. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar en esta [dirección](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
+Antes de comenzar a instalar los paquetes se debe hacer diversas configuraciones para evitar instalar los paquetes como administrador usando `sudo`. Les recomiendo seguir los siguientes pasos explicados de forma resumida, pero que pueden encontrar más información en esta [dirección](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 
 - Crear un directorio para los paquetes a instalar globalmente
 
@@ -51,21 +52,25 @@ Como recomendación les propongo instalar [grunt](https://www.npmjs.com/package/
 
 > `npm install -g grunt-cli`
 
-- Express: TODO:
+- Express: Es un framework web popular de javascript:
 
 > `npm install -g express`
 
+## Desarrollando en NodeJs
 
-**Comando**
+Para poder desarrollar de manera agradable se usan las siguientes funcionalidades incluidas en el paquete instalado
 
-> `npm install express --save`
+Lo primero es crear un paquete ejecutamos `npm init` esto nos permite establecer las dependencias nombre del paquete y otras diversas opciones que se quedan grabadas en el fichero package.json
+en el mismo directorio que se ejecutó el comando.
 
-![](images/node2.png)
+Para añadir dependencias al proyecto se puede hacer directamente con un comando
+
+> `npm install package-name --save-dev`
 
 ## Instalación del editor de texto Atom
 
-Usaremos **Atom** como editor de texto para el desarrollo de nuestros proyectos, para ello descargamos el instalador en la página oficial de atom, y a continuación ejecutamos el asistente de instalación.
-
+Como editor se puede eligir Atom, este biene con muchas funcionalidades y capacidad de instalar plugins. Pero si se prefiere algún clásico como Emacs o Vim.
+En mi caso es emacs con [spacemacs](https://github.com/syl20bnr/spacemacs) principalmente para generar apuntes en formato *org*.
 ![](images/atom1.png)
 
 Dado que vamos a utilizar el formato **Markdown** es bueno saber que en **Atom** podremos obtener una preview del contenido de nuestro fichero Markdown ya que incorpora el formato **GitHub Markdown** con el comando:
@@ -75,27 +80,8 @@ Dado que vamos a utilizar el formato **Markdown** es bueno saber que en **Atom**
 > * Markdown preview `ctrl+shift+m`
 > * Markdown export to HTML `Save As HTML`
 
-
-
-## Instalación de GitHub Desktop
-
-GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones **Git**. Para instalarlo accedemos a la página oficial de **GitHub** y descargamos el instalador que ejecutaremos posteriormente para iniciar el asistente de instalación.
-
-![](images/git.png)
-
-Una vez instalado configuramos nuestra cuenta de **GitHub** en la aplicación para poder sincronizar nuestro repositorio tanto local como remoto, en caso de no tener cuenta crearemos una en la página de **GitHub**.
-
-## Cloud 9
-
-Es un IDE de desarrollo online, para su uso será necesario crear una cuenta en la página oficial o acceder con las credenciales de GitHub si ya se dispone de una cuenta. Una vez registrados podremos crear proyectos de varias tecnologías como puede ser NodeJS, HTML5, C++, Ruby On Rails, etc.
-
-![](images/cloud.png)
-
-Si disponemos de algún proyecto en un repositorio de GitHub podremos asociarlo a **Cloud9** para trabajar en él tan solo creando un “`nuevo workspace`” y añadiendo la url *git* del correspondiente repositorio.
-
-![](images/cloud2.png)
-
-Además **Cloud9** permite el trabajo en equipo en el IDE añadiendo miembros a tu workspace.
+También se puede configurar grunt para automatizar el proceso y darle una mayor personalización al formato de salida un ejemplo de configuración es este
+[repo](https://github.com/EleDiaz/tareas-iniciales-EleDiaz).
 
 ## Markdown
 

@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         panda : {
             index : {
               options : {
-                pandocOptions: "-t html5 --smart --section-divs --mathjax --css=default.css"
+                pandocOptions: "-t html5 --smart --section-divs --mathjax --css=template.css --template template.html"
               },
               files: {
                 "index.html" : [
