@@ -9,6 +9,15 @@ Configuración de las herramientas y tecnologías a utilizar en la asignatura Si
 * Cloud9
 * Markdown
 
-[Página personal de prácticas](http://alu0100536652.github.io/)
+Se han usado las siguientes herramientas para generar la salida de la tarea inicial
 
-[Página de la práctica inicial](http://alu0100536652.github.io/Tutorial-STW/)
+- NodeJS
+- Grunt
+- Pandoc
+- Atom
+- css
+- [Pandoc boostrap template](https://github.com/tonyblundell/pandoc-bootstrap-template)
+
+[Página personal de prácticas](http://elediaz.github.io/)
+
+[Página de la práctica inicial](http://elediaz.github.io/tareas-iniciales-EleDiaz/)
